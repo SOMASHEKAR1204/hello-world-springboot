@@ -33,4 +33,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.bharathgowda652 }}/hello-world-springboot:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/hello-world-springboot:latest
