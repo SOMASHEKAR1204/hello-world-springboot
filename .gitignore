@@ -1,0 +1,19 @@
+# Gradle
+.gradle/
+build/
+
+# Docker
+*.log
+*.pid
+*.sock
+AppData/
+**/Docker/run/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
