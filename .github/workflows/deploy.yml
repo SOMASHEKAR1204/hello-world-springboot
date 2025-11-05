@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Deploy to EC2
 
 on:
   push:
@@ -34,3 +34,14 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/hello-world-springboot:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            chmod +x ~/deploy.sh
+            ~/deploy.sh
+
